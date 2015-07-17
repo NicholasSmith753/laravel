@@ -15,4 +15,8 @@
             <div class="body"> {{ $article->body }}</div>
         </article>
     @endforeach
+
+    <hr/>
+    <h3><a href="{{ action('ArticlesController@create') }}">Create New Article</a></h3>
+
 @stop
