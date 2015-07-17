@@ -2,18 +2,19 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
+use Request;
 
 use App\Article;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
+use Carbon\Carbon;
 
 
 class ArticlesController extends Controller
 {
     public function index()
     {
-        $articles = Article::all();
+        $articles = Article::latest('published_at')->get();
 
         return view('articles.index', compact('articles'));
     }
@@ -33,7 +34,10 @@ class ArticlesController extends Controller
     public function store()
     {
         $input = Request::all();
+        $input['published_at'] = Carbon::now();
 
-        return $input;
+        Article::create($input);
+
+        return redirect('articles');
     }
 }
