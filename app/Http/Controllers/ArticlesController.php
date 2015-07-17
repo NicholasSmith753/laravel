@@ -41,8 +41,4 @@ class ArticlesController extends Controller
         return redirect('articles');
     }
 
-    public function soar()
-    {
-        return "oh no";
-    }
 }
