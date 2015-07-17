@@ -5,12 +5,23 @@
 
     <hr/>
 
-    {!! Form::open(['url' => 'articles') !!}
-        {!! Form::label('name', 'Name:') !!}
-        {!! Form::text('name') !!}
+    {!! Form::open(['url' => 'articles']) !!}
+        <div class="formgroup">
+            {!! Form::label('title', 'Title:') !!}
+            {!! Form::text('title', null, ['class' => 'form-control']) !!}
 
-        {!! Form::label('name', 'Name:') !!}
-        {!! Form::textarea('name') !!}
+        </div>
+
+        <div class="formgroup">
+            {!! Form::label('body', 'Body:') !!}
+            {!! Form::textarea('body', null, ['class' => 'form-control']) !!}
+
+        </div>
+
+        <div class="form-group">
+            {!! Form::submit('Add Article', ['class' => 'btn btn-primary form-control']) !!}
+        </div>
+
     {!! Form::close() !!}
 
 @stop

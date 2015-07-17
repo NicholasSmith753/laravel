@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 use App\Article;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
-use Request;
+
 
 class ArticlesController extends Controller
 {
